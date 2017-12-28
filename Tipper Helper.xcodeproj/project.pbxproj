@@ -14,6 +14,7 @@
 		F3A7DD341FF36C2600F5729D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3A7DD321FF36C2600F5729D /* LaunchScreen.storyboard */; };
 		F3A7DD3F1FF36C2600F5729D /* Tipper_HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7DD3E1FF36C2600F5729D /* Tipper_HelperTests.swift */; };
 		F3A7DD4A1FF36C2600F5729D /* Tipper_HelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7DD491FF36C2600F5729D /* Tipper_HelperUITests.swift */; };
+		F3A7DD581FF3834700F5729D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7DD571FF3834700F5729D /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F3A7DD451FF36C2600F5729D /* Tipper HelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tipper HelperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A7DD491FF36C2600F5729D /* Tipper_HelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tipper_HelperUITests.swift; sourceTree = "<group>"; };
 		F3A7DD4B1FF36C2600F5729D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3A7DD571FF3834700F5729D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				F3A7DD291FF36C2600F5729D /* AppDelegate.swift */,
 				F3A7DD2B1FF36C2600F5729D /* ViewController.swift */,
+				F3A7DD571FF3834700F5729D /* SettingsViewController.swift */,
 				F3A7DD2D1FF36C2600F5729D /* Main.storyboard */,
 				F3A7DD301FF36C2600F5729D /* Assets.xcassets */,
 				F3A7DD321FF36C2600F5729D /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				F3A7DD2C1FF36C2600F5729D /* ViewController.swift in Sources */,
 				F3A7DD2A1FF36C2600F5729D /* AppDelegate.swift in Sources */,
+				F3A7DD581FF3834700F5729D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
