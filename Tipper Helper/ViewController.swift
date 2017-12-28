@@ -15,13 +15,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
+    @IBOutlet weak var moneyLabel1: UILabel!
+    @IBOutlet weak var moneyLabel2: UILabel!
     var tipPercentages = [0.18, 0.2, 0.25]
     let defaults = UserDefaults.standard
+    let currency = NumberFormatter()
     override func viewDidLoad() {
         super.viewDidLoad()
         billField.becomeFirstResponder()
         NotificationCenter.default.addObserver(self,selector: #selector(applicationDidEnterBackground),name: NSNotification.Name.UIApplicationDidEnterBackground,object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(applicationWillEnterForeground),name: NSNotification.Name.UIApplicationWillEnterForeground,object: nil)
+        moneyLabel1.text = currency.currencySymbol
+        moneyLabel2.text = currency.currencySymbol
         
     }
     
@@ -51,6 +56,8 @@ class ViewController: UIViewController {
         tipControl.selectedSegmentIndex = defaults.integer(forKey: "percentage")
         billField.becomeFirstResponder()
         updateTip(tipAmount: tipControl.selectedSegmentIndex)
+        moneyLabel1.text = currency.currencySymbol
+        moneyLabel2.text = currency.currencySymbol
     }
     
     override func viewDidAppear(_ animated: Bool) {
