@@ -4,7 +4,7 @@ Tipper Helper is a tip calculator application for iOS.
 
 Submitted by: Bethany Bin
 
-Time spent: 8 hours spent in total
+Time spent: 10 hours spent in total
 
 ## User Stories
 
@@ -23,6 +23,9 @@ The following **additional** features are implemented:
 
 - [✓] The ability to have customized tip percentages.
 - [✓] Reset to default percentages button (18%, 20%, 25%).
+- [✓] Split the bill based on number of people
+
+
 
 ## Video Walkthrough
 

@@ -17,16 +17,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var moneyLabel1: UILabel!
     @IBOutlet weak var moneyLabel2: UILabel!
+    @IBOutlet weak var moneyLabel3: UILabel!
     @IBOutlet weak var personLabel: UILabel!
     @IBOutlet weak var splitLabel: UILabel!
     var tipPercentages = [0.18, 0.2, 0.25]
     var total = 0.0
     var splitValue = 0.0
+    var intPerson = 1
     @IBAction func personStepper(_ sender: UIStepper) {
         personLabel.text = Int(sender.value).description
-        let intPerson = Int(sender.value)
-        splitValue = total/Double(intPerson)
-        splitLabel.text = String(splitValue)
+        intPerson = Int(sender.value)
+        split()
         
     }
     let defaults = UserDefaults.standard
@@ -38,6 +39,8 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self,selector: #selector(applicationWillEnterForeground),name: NSNotification.Name.UIApplicationWillEnterForeground,object: nil)
         moneyLabel1.text = currency.currencySymbol
         moneyLabel2.text = currency.currencySymbol
+        moneyLabel3.text = currency.currencySymbol
+
         
     }
     
@@ -69,6 +72,12 @@ class ViewController: UIViewController {
         updateTip(tipAmount: tipControl.selectedSegmentIndex)
         moneyLabel1.text = currency.currencySymbol
         moneyLabel2.text = currency.currencySymbol
+        moneyLabel3.text = currency.currencySymbol
+        if(billField.text != ""){
+            split()
+        }
+       
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -109,16 +118,22 @@ class ViewController: UIViewController {
         let bill = Double(billField.text!) ?? 0
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         total = bill + tip
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = String(format: "%.2f", tip)
+        totalLabel.text = String(format: "%.2f", total)
+        split()
     }
     func updateTip(tipAmount: Int){
         adjustTips()
         let bill = Double(billField.text!) ?? 0
         let tip = bill * tipPercentages[tipAmount]
         total = bill + tip
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = String(format: "%.2f", tip)
+        totalLabel.text = String(format: "%.2f", total)
+        split()
+    }
+    func split(){
+        splitValue = total/Double(intPerson)
+        splitLabel.text = String(format: "%.2f", splitValue)
     }
     func adjustTips(){
         if(defaults.string(forKey: "firstDefault") != ""){
