@@ -30,6 +30,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+THIS IS NOT THE GIF WITH THE LATEST UPDATES!
 
 <img src='https://i.imgur.com/5mFXqi8.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
