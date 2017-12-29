@@ -17,7 +17,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var moneyLabel1: UILabel!
     @IBOutlet weak var moneyLabel2: UILabel!
+    @IBOutlet weak var personLabel: UILabel!
+    @IBOutlet weak var splitLabel: UILabel!
     var tipPercentages = [0.18, 0.2, 0.25]
+    var total = 0.0
+    var splitValue = 0.0
+    @IBAction func personStepper(_ sender: UIStepper) {
+        personLabel.text = Int(sender.value).description
+        let intPerson = Int(sender.value)
+        splitValue = total/Double(intPerson)
+        splitLabel.text = String(splitValue)
+        
+    }
     let defaults = UserDefaults.standard
     let currency = NumberFormatter()
     override func viewDidLoad() {
@@ -97,7 +108,7 @@ class ViewController: UIViewController {
         adjustTips()
         let bill = Double(billField.text!) ?? 0
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
-        let total = bill + tip
+        total = bill + tip
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
     }
@@ -105,7 +116,7 @@ class ViewController: UIViewController {
         adjustTips()
         let bill = Double(billField.text!) ?? 0
         let tip = bill * tipPercentages[tipAmount]
-        let total = bill + tip
+        total = bill + tip
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
     }
